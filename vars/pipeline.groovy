@@ -1,3 +1,5 @@
+import jenkins.model.*
+
 def call(Map pipelineParams){
     pipeline{
         agent{

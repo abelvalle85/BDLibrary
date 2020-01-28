@@ -14,7 +14,8 @@ def call(Map pipelineParams) {
         }*/
 
         parameters {
-            activeChoiceParam("ENV"){
+            activeChoiceParam(name: 'ENV', choices: ['Stage','Production'], description: 'Select the Environment for build and deploy')
+            /*activeChoiceParam("ENV"){
                 description('Select the environment');
                 choiceType('SINGLE_SELECT');
                 groovyScript {
@@ -31,7 +32,7 @@ def call(Map pipelineParams) {
                     fallbackScript('return ["Script error!"]')
                 }
                 referencedParameter('ENV')
-            }
+            }*/
             /*choice(name: 'ENV', choices: ['Stage','Production'], description: 'Select the Environment for build and deploy')
             choice(name: 'PROJECT', choices: ['sl','inkpop'], description: 'Select the project to use')
             booleanParam(name:'PULL', defaultValue: true, description: 'git pull required')

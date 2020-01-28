@@ -28,7 +28,7 @@ def call(Map pipelineParams) {
                 }
             }
             stage("Build") {
-                steps {
+                steps{
                     echo "${pipelineParams.APP}"
                 }
             }

@@ -8,7 +8,7 @@ def call(Map pipelineParams) {
             parameters([
                     [$class: 'ChoiceParameter',
                      choiceType: 'PT_SINGLE_SELECT',
-                     description: 'Select the Env Name from the Dropdown List',
+                     description: 'Select the environment',
                      filterLength: 1,
                      filterable: true,
                      name: 'Env',

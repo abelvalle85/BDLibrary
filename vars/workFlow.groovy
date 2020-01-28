@@ -26,7 +26,7 @@ def call(Map pipelineParams) {
         stages {
             stage("Pre-build") {
                 steps {
-                    echo "Prebuild step"
+                    echo "${params.ENV}"
                 }
             }
             stage("Build") {

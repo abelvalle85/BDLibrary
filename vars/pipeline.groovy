@@ -1,8 +1,8 @@
 import jenkins.model.*
 
 def call(Map pipelineParams){
-    pipeline{
-        agent{
+    pipeline {
+        agent {
             node {
                 label 'agent-cloud-ec2'
             }

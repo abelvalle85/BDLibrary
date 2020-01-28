@@ -29,7 +29,7 @@ def call(Map pipelineParams) {
             }
             stage("Build") {
                 steps{
-                    echo "${pipelineParams.APP}"
+                    echo "${pipelineParams.PROJECT}"
                 }
             }
             stage("Deploy") {

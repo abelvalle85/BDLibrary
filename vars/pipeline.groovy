@@ -3,11 +3,14 @@ jenkins = Jenkins.instance
 
 def call(Map pipelineParams) {
     pipeline {
-        agent {
+        agent any
+
+        /*agent {
             node {
                 label 'agent-cloud-ec2'
             }
-        }
+        }*/
+
         parameters{
             choice(name: 'ENV', choices: ['Stage','Production'], description: 'Select the Environment for build and deploy')
             choice(name: 'PROJECT', choices: ['sl','inkpop'], description: 'Select the project to use')

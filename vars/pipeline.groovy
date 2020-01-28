@@ -34,7 +34,7 @@ def call(Map pipelineParams) {
             }
             stage("Deploy") {
                 steps {
-
+                    echo "Do something"
                 }
             }
         }

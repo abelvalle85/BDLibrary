@@ -24,12 +24,12 @@ def call(Map pipelineParams) {
         stages {
             stage("Pre-build") {
                 steps {
-                    echo "${pipelineParams.ENV}"
+                    echo "Prebuild step"
                 }
             }
             stage("Build") {
                 steps{
-                    echo "${pipelineParams.PROJECT}"
+                    echo "Build step"
                 }
             }
             stage("Deploy") {

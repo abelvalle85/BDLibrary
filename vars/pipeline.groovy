@@ -11,7 +11,7 @@ def call(Map pipelineParams) {
             }
         }*/
 
-        parameters{
+        parameters {
             choice(name: 'ENV', choices: ['Stage','Production'], description: 'Select the Environment for build and deploy')
             choice(name: 'PROJECT', choices: ['sl','inkpop'], description: 'Select the project to use')
             booleanParam(name:'PULL', defaultValue: true, description: 'git pull required')
@@ -21,18 +21,18 @@ def call(Map pipelineParams) {
             choice(name: 'SERVER_FAMILY', choices: ['pajamas-all','pajamas-1'], description: 'Select servers')
         }
         stages {
-            stage("Pre-build"){
-                steps{
+            stage("Pre-build") {
+                steps {
                     echo "${pipelineParams.ENV}"
                 }
             }
-            stage("Build"){
-                steps{
+            stage("Build") {
+                steps {
                     echo "${pipelineParams.APP}"
                 }
             }
-            stage("Deploy"){
-                steps{
+            stage("Deploy") {
+                steps {
 
                 }
             }

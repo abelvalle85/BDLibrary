@@ -25,7 +25,7 @@ def call(Map pipelineParams) {
                                      classpath: [],
                                      sandbox: false,
                                      script:
-                                             'return["Dev","QA","Stage","Prod"]'
+                                             'return[\'Dev\',\'QA\',\'Stage\',\'Prod\']'
                              ]
                      ]
                     ],
@@ -49,8 +49,8 @@ def call(Map pipelineParams) {
                                      classpath: [],
                                      sandbox: false,
                                      script:
-                                             ''' if (Env.equals("Dev")){
-                                return["devaaa001","devaaa002","devbbb001","devbbb002","devccc001","devccc002"]
+                                             ''' if (Env.equals(\'Dev\')){
+                                return[\'devaaa001\',\'devaaa002\',\'devbbb001\',\'devbbb002\',\'devccc001\',\'devccc002\']
                             }
                             else if(Env.equals("QA")){
                                 return["qaaaa001","qabbb002","qaccc003"]

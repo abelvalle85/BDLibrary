@@ -15,8 +15,8 @@ def call(Map pipelineParams) {
 
         parameters {
             activeChoiceParam("ENV"){
-                description('Select the environment')
-                choiceType('SINGLE_SELECT')
+                description('Select the environment');
+                choiceType('SINGLE_SELECT');
                 groovyScript {
                     script('["Stage","Production"]')
                     fallbackScript('return ["ERROR"]')

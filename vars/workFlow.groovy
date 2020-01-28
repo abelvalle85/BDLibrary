@@ -1,5 +1,5 @@
 #!/usr/bin/env groovy
-//import jenkins.model.*
+import jenkins.model.*
 //jenkins = Jenkins.instance
 
 def call(Map pipelineParams) {

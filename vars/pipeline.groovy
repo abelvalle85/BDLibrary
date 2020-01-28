@@ -20,7 +20,7 @@ def call(Map pipelineParams) {
             booleanParam(name:'START_CONTAINER', defaultValue: true, description: 'Start the container on the target')
             choice(name: 'SERVER_FAMILY', choices: ['pajamas-all','pajamas-1'], description: 'Select servers')
         }
-        stages{
+        stages {
             stage("Pre-build"){
                 steps{
                     echo "${pipelineParams.ENV}"

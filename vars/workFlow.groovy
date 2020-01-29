@@ -52,7 +52,7 @@ def call(Map pipelineParams) {
                                      script:
                                              ''' if (Env.equals(\'Stage\')){
                                 //return[\'devaaa001\',\'devaaa002\',\'devbbb001\',\'devbbb002\',\'devccc001\',\'devccc002\']
-                                def stageServers = fillChoices("StageServers.txt")
+                                def stageServers = fillChoices("${get_resource_dir()}/StageServers.txt")
                                 stageServers.each {
                                     println it
                                 }
@@ -60,7 +60,7 @@ def call(Map pipelineParams) {
                             }
                             else if(Env.equals(\'Production\')){
                                 //return[\'praaa001\',\'prbbb002\',\'prccc003\']
-                                'return[fillChoices("ProductionServers.txt")]'
+                                'return[fillChoices("${get_resource_dir()}/ProductionServers.txt")]'
                             }
                         '''
                              ]

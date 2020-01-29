@@ -60,7 +60,7 @@ def call(Map pipelineParams) {
                             }
                             else if(Env.equals(\'Production\')){
                                 //return[\'praaa001\',\'prbbb002\',\'prccc003\']
-                                'return[fillChoices("resources/ProductionServers.txt")]'
+                                'return[fillChoices("ProductionServers.txt")]'
                             }
                         '''
                              ]

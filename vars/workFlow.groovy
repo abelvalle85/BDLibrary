@@ -108,7 +108,7 @@ def call(Map pipelineParams) {
                         def listS = fillChoices("${get_resource_dir()}/${params.Env}Servers.txt")
                         def listF = listS.join(",")
                         println listF
-                        println listF.class
+                        println listS.class
                         //println "Here is the second line: ${listS[1]}"
                     }
                 }

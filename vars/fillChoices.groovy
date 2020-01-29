@@ -7,6 +7,7 @@ def call(String filepath){
     //def parameters = []
     File file = new File(filepath)
     def lines = file.readLines()
+    assert lines instanceof java.util.List
     return lines
     /*new File(filepath).eachLine { line ->
         parameters << line

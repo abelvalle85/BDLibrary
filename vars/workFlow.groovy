@@ -51,22 +51,7 @@ def call(Map pipelineParams) {
                                      classpath: [],
                                      sandbox: true,
                                      script:
-                                             ''' //if (Env.equals(\'Stage\')){
-                                                    source="${get_resource_dir()}/${param.Env}Servers.txt"
-                                                    File file = new File(source)
-                                                    def lines = file.readLines()
-                                                    'return [\'pajamas-all\',\'pajamas-1\',\'pajamas-2\',\'pajamas-3\',\'pajamas-4\',\'pajamas-5\']'
-                                //return[\'devaaa001\',\'devaaa002\',\'devbbb001\',\'devbbb002\',\'devccc001\',\'devccc002\']
-                                //def stageServers = fillChoices("${get_resource_dir()}/StageServers.txt")
-                                //'return[fillChoices("${get_resource_dir()}/StageServers.txt")]'
-                                //'return[stageServers.flatten()]'
-                                //'return[fillChoices("${get_resource_dir()}/StageServers.txt").join(",")]'
-                           // }
-                            //else if(Env.equals(\'Production\')){
-                                //return[\'praaa001\',\'prbbb002\',\'prccc003\']
-                              //  return fillChoices("${get_resource_dir()}/ProductionServers.txt")
-                          //  }
-                        '''
+                                             'return [\'pajamas-all\',\'pajamas-1\',\'pajamas-2\',\'pajamas-3\',\'pajamas-4\',\'pajamas-5\']'
                              ]
                      ]
                     ]

@@ -53,8 +53,9 @@ def call(Map pipelineParams) {
                                      script:
                                              ''' if (Env.equals(\'Stage\')){
                                 //return[\'devaaa001\',\'devaaa002\',\'devbbb001\',\'devbbb002\',\'devccc001\',\'devccc002\']
-                                //def stageServers = fillChoices("${get_resource_dir()}/StageServers.txt")
-                                'return[fillChoices("${get_resource_dir()}/StageServers.txt")]'
+                                def stageServers = fillChoices("${get_resource_dir()}/StageServers.txt")
+                                //'return[fillChoices("${get_resource_dir()}/StageServers.txt")]'
+                                'return[stageServers.join(",")]'
                             }
                             else if(Env.equals(\'Production\')){
                                 //return[\'praaa001\',\'prbbb002\',\'prccc003\']

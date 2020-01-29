@@ -52,7 +52,7 @@ def call(Map pipelineParams) {
                                      sandbox: true,
                                      script:
                                              ''' if (Env.equals(\'Stage\')){
-                                                    source(${get_resource_dir()}/StageServers.txt"))
+                                                    source="${get_resource_dir()}/StageServers.txt"
                                                     def servers = []
                                                     new File(source).eachLine{line ->
                                                         servers << line

@@ -59,7 +59,7 @@ def call(Map pipelineParams) {
                             }
                             else if(Env.equals(\'Production\')){
                                 //return[\'praaa001\',\'prbbb002\',\'prccc003\']
-                                'return[fillChoices("${get_resource_dir()}/ProductionServers.txt")]'
+                                'return[fillChoices("${get_resource_dir()}/ProductionServers.txt").flatten()]'
                             }
                         '''
                              ]

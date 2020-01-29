@@ -8,5 +8,8 @@ def call(String filepath){
     new File(filepath).eachLine { line ->
         parameters << line
     }
-    return parameters
+    //return parameters
+    parameters.each {
+        println it
+    }
 }

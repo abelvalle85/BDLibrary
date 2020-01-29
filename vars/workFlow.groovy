@@ -55,7 +55,7 @@ def call(Map pipelineParams) {
                                                     source="${get_resource_dir()}/${param.Env}Servers.txt"
                                                     File file = new File(source)
                                                     def lines = file.readLines()
-                                                    return lines
+                                                    return [lines.flatten()]
                                 //return[\'devaaa001\',\'devaaa002\',\'devbbb001\',\'devbbb002\',\'devccc001\',\'devccc002\']
                                 //def stageServers = fillChoices("${get_resource_dir()}/StageServers.txt")
                                 //'return[fillChoices("${get_resource_dir()}/StageServers.txt")]'

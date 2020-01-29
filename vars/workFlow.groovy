@@ -50,10 +50,12 @@ def call(Map pipelineParams) {
                                      sandbox: true,
                                      script:
                                              ''' if (Env.equals(\'Stage\')){
-                                return[\'devaaa001\',\'devaaa002\',\'devbbb001\',\'devbbb002\',\'devccc001\',\'devccc002\']
+                               // return[\'devaaa001\',\'devaaa002\',\'devbbb001\',\'devbbb002\',\'devccc001\',\'devccc002\']
+                               fillChoices("../resources/StageServers.txt")
                             }
                             else if(Env.equals(\'Production\')){
-                                return[\'praaa001\',\'prbbb002\',\'prccc003\']
+                                //return[\'praaa001\',\'prbbb002\',\'prccc003\']
+                                fillChoices("../resources/ProductionServers.txt")
                             }
                         '''
                              ]

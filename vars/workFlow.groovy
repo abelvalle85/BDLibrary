@@ -52,7 +52,7 @@ def call(Map pipelineParams) {
                                      script:
                                              ''' if (Env.equals(\'Stage\')){
                                 //return[\'devaaa001\',\'devaaa002\',\'devbbb001\',\'devbbb002\',\'devccc001\',\'devccc002\']
-                                return[fillChoices("../resources/StageServers.txt")]
+                               fillChoices("../resources/StageServers.txt")
                             }
                             else if(Env.equals(\'Production\')){
                                 //return[\'praaa001\',\'prbbb002\',\'prccc003\']

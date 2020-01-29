@@ -113,6 +113,10 @@ def call(Map pipelineParams) {
                     sh "ls -l /var/lib/sp-blue-ocean-team/jobs/test/jobs/SharedLibrary/workspace"
                     sh "ls -l"
                     echo "${params.Env}"
+                    script{
+                        def listS = fillChoices("${get_resource_dir()}/StageServers.txt")
+                        println "Here is the first line: ${listS[0]}"
+                    }
                 }
             }
             stage("Build") {

@@ -5,7 +5,7 @@ def call(String filepath){
         return lines
     }*/
     //def parameters = []
-    File file = new File(filePath)
+    File file = new File(filepath)
     def lines = file.readLines()
     return lines
     /*new File(filepath).eachLine { line ->

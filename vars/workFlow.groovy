@@ -51,7 +51,7 @@ def call(Map pipelineParams) {
                                      classpath: [],
                                      sandbox: true,
                                      script:
-                                             'return [fillChoices("${get_resource_dir()}/${params.Env}Servers.txt")]'
+                                             "return [fillChoices(\"${get_resource_dir()}/${params.Env}Servers.txt\")]"
                              ]
                      ]
                     ]

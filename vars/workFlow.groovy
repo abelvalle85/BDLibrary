@@ -28,7 +28,7 @@ def call(Map pipelineParams) {
                                      sandbox: true,
                                      script: '''
                                              def type = ['Stage','Production']
-                                             return[type]
+                                             return type
                                         '''
 
                              ]

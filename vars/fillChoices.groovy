@@ -6,7 +6,7 @@ def call(String filepath){
     }*/
     def parameters = []
     new File(filepath).eachLine { line ->
-        words << line
+        parameters << line
     }
     return parameters
 }

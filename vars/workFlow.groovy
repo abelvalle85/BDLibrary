@@ -1,5 +1,6 @@
 #!/usr/bin/env groovy
 import jenkins.model.*
+import fillChoices
 //jenkins = Jenkins.instance
 
 def call(Map pipelineParams) {
@@ -50,12 +51,12 @@ def call(Map pipelineParams) {
                                      sandbox: true,
                                      script:
                                              ''' if (Env.equals(\'Stage\')){
-                                return[\'devaaa001\',\'devaaa002\',\'devbbb001\',\'devbbb002\',\'devccc001\',\'devccc002\']
-                               //return[fillChoices("../resources/StageServers.txt")]
+                                //return[\'devaaa001\',\'devaaa002\',\'devbbb001\',\'devbbb002\',\'devccc001\',\'devccc002\']
+                                return[fillChoices("../resources/StageServers.txt")]
                             }
                             else if(Env.equals(\'Production\')){
-                                return[\'praaa001\',\'prbbb002\',\'prccc003\']
-                                //return[fillChoices("../resources/ProductionServers.txt")]
+                                //return[\'praaa001\',\'prbbb002\',\'prccc003\']
+                                return[fillChoices("../resources/ProductionServers.txt")]
                             }
                         '''
                              ]

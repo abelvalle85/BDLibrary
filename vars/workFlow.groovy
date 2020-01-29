@@ -10,7 +10,7 @@ def call(Map pipelineParams) {
                      choiceType: 'PT_SINGLE_SELECT',
                      description: 'Select the environment',
                      filterLength: 1,
-                     filterable: true,
+                     filterable: flase,
                      name: 'Env',
                      randomName: 'choice-parameter-5631314439613978',
                      script: [

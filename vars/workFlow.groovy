@@ -109,12 +109,6 @@ def call(Map pipelineParams) {
             stage("Pre-build") {
                 steps {
                     echo "${params.Env}"
-                    script {
-                        def listP = fillChoices("../resources/ProductionServers.txt")
-                        listP.each{
-                            println it
-                        }
-                    }
                 }
             }
             stage("Build") {

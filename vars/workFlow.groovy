@@ -27,7 +27,7 @@ def call(Map pipelineParams) {
                                      classpath: [],
                                      sandbox: true,
                                      script: '''
-                                             def type = ['Stage','Production']
+                                             def type = ["Stage","Production"]
                                              return type
                                         '''
 
@@ -59,7 +59,7 @@ def call(Map pipelineParams) {
                                      classpath: [],
                                      sandbox: true,
                                      script: '''
-                                           def listS = fillChoices("${get_resource_dir()}/${params.Env}Servers.txt")
+                                          def listS = fillChoices("${get_resource_dir()}/${params.Env}Servers.txt")
                                           return listS
                                      '''
 

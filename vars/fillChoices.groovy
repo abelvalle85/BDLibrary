@@ -9,7 +9,7 @@ def call(String filepath){
         parameters << line
     }
     //return parameters
-    parameters.each {
+    /*parameters.each {
         println it
-    }
+    }*/
 }

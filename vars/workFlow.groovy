@@ -56,7 +56,7 @@ def call(Map pipelineParams) {
                                 //def stageServers = fillChoices("${get_resource_dir()}/StageServers.txt")
                                 //'return[fillChoices("${get_resource_dir()}/StageServers.txt")]'
                                 //'return[stageServers.flatten()]'
-                                'return[fillChoices("${get_resource_dir()}/StageServers.txt").join(",")]\'
+                                'return[fillChoices("${get_resource_dir()}/StageServers.txt").join(",")]'
                             }
                             else if(Env.equals(\'Production\')){
                                 //return[\'praaa001\',\'prbbb002\',\'prccc003\']

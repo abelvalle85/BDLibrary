@@ -46,7 +46,7 @@ def call(Map pipelineParams) {
                                      sandbox: true,
                                      script:
                                              //'return[\'Could not get Environment from Env Param\']'
-                                             return ["fillChoices("${get_resource_dir()}/${params.Env}Servers.txt")"]
+                                             'return ["fillChoices(${get_resource_dir()}/${params.Env}Servers.txt)"]'
 
                              ],
                              script: [

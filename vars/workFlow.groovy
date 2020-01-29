@@ -115,7 +115,7 @@ def call(Map pipelineParams) {
                     echo "${params.Env}"
                     script{
                         def listS = fillChoices("${get_resource_dir()}/StageServers.txt")
-                        println "Here is the first line: ${listS[0]}"
+                        println "Here is the second line: ${listS[1]}"
                     }
                 }
             }

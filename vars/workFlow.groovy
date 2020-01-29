@@ -101,7 +101,6 @@ def call(Map pipelineParams) {
             stage("Pre-build") {
                 steps {
                     sh "pwd"
-                    sh "ls -l /var/lib/sp-blue-ocean-team/jobs/test/jobs/SharedLibrary/workspace"
                     sh "ls -l"
                     echo "${params.Env}"
                     script{

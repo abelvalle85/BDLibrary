@@ -108,6 +108,7 @@ def call(Map pipelineParams) {
         stages {
             stage("Pre-build") {
                 steps {
+                    sh "ls -l"
                     echo "${params.Env}"
                 }
             }

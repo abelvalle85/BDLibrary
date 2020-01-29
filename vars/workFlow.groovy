@@ -53,6 +53,9 @@ def call(Map pipelineParams) {
                                              ''' if (Env.equals(\'Stage\')){
                                 //return[\'devaaa001\',\'devaaa002\',\'devbbb001\',\'devbbb002\',\'devccc001\',\'devccc002\']
                                 def stageServers = fillChoices("resources/StageServers.txt")
+                                stageServers.each {
+                                    println it
+                                }
                                 'return[stageServers]'
                             }
                             else if(Env.equals(\'Production\')){

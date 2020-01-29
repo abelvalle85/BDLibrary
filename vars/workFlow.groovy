@@ -48,8 +48,7 @@ def call(Map pipelineParams) {
                                      classpath: [],
                                      sandbox: true,
                                      script: '''
-                                        File file = new File(filepath)
-                                        lines = file.readLines()
+                                        lines = 
                                         return lines
                                         '''
                                              //'return[\'Could not get Environment from Env Param\']'
@@ -61,7 +60,7 @@ def call(Map pipelineParams) {
                                      sandbox: true,
                                      script: '''
                                            def listS = fillChoices("${get_resource_dir()}/${params.Env}Servers.txt")
-                                          "return listS"
+                                          return listS
                                      '''
 
                              ]

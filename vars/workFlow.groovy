@@ -44,9 +44,13 @@ def call(Map pipelineParams) {
                              fallbackScript: [
                                      classpath: [],
                                      sandbox: true,
-                                     script:
+                                     script: '''
+                                        File file = new File(filepath)
+                                        lines = file.readLines()
+                                        return lines
+                                        '''
                                              //'return[\'Could not get Environment from Env Param\']'
-                                             'return ["fillChoices(\"${get_resource_dir()}/${params.Env}Servers.txt\")"]'
+                                        //     'return ["fillChoices(\"${get_resource_dir()}/${params.Env}Servers.txt\")"]'
 
                              ],
                              script: [

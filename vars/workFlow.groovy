@@ -25,7 +25,7 @@ def call(Map pipelineParams) {
                                      classpath: [],
                                      sandbox: false,
                                      script:
-                                             'return[\'Dev\',\'QA\',\'Stage\',\'Prod\']'
+                                             'return[\'Dev\']'
                              ]
                      ]
                     ],

@@ -115,6 +115,7 @@ def call(Map pipelineParams) {
                     sh "ls -l /var/lib/sp-blue-ocean-team/jobs/test/jobs/SharedLibrary/workspace"
                     sh "ls -l"
                     echo "${params.Env}"
+                    echo "${get_resource_dir()}"
                 }
             }
             stage("Build") {

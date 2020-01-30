@@ -119,6 +119,7 @@ def call(Map pipelineParams) {
                         println listS
                         println listF
                         println listS.class
+                        println listF.class
                         //println "Here is the second line: ${listS[1]}"
                     }
                 }

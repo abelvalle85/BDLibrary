@@ -60,7 +60,7 @@ def call(Map pipelineParams) {
                                      script: '''
                                          // List<String> listS = fillChoices("${get_resource_dir()}/${params.Env}Servers.txt")
                                           //return ["pajamas-all", "pajamas-1", "pajamas-2", "pajamas-3", "pajamas-4", "pajamas-5"]
-                                          println listS
+                                          return `println listS`
                                  '''
 
                              ]

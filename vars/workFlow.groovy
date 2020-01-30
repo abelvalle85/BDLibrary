@@ -74,7 +74,7 @@ def call(Map pipelineParams) {
                      filterable: true,
                      name: 'Service',
                      randomName: 'choice-parameter-5631314456138619',
-                     referencedParameters: 'Service',
+                     referencedParameters: 'Project',
                      script: [
                              $class: 'GroovyScript',
                              fallbackScript: [

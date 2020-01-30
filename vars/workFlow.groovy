@@ -61,7 +61,7 @@ def call(Map pipelineParams) {
                                      script: '''
                                           if (Env.equals("Stage")) {
                                               return fillChoices.StageServers
-                                            } else if (States.equals("Production")) {
+                                            } else if (Env.equals("Production")) {
                                               return fillChoices.ProductionServers
                                             } else {
                                               return ["Unknown state"]

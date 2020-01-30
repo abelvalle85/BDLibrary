@@ -120,15 +120,15 @@ def call(Map pipelineParams) {
                     sh "pwd"
                     sh "ls -l"
                     echo "${params.Env}"
-                    //script{
-                        //def listS = fillChoices("${get_resource_dir()}/${params.Env}Servers.txt")
-                        //def listF = listS.join(",")
-                        /*println listS
+                    script{
+                        def listS = fillChoices("${get_resource_dir()}/${params.Env}Servers.txt")
+                        def listF = listS.join(",")
+                        println listS
                         println listF
                         println listS.class
-                        println listF.class*/
+                        println listF.class
                         //println "Here is the second line: ${listS[1]}"
-                    //}
+                    }
                 }
             }
             stage("Build") {

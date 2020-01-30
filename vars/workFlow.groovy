@@ -58,15 +58,15 @@ def call(Map pipelineParams) {
                                      classpath: [],
                                      sandbox: true,
                                      script: """//'''
-                                          if (Env.equals("Stage")) {
-                                              return fillChoices("${get_resource_dir()}/${params.Env}Servers.txt")
-                                            } else if (Env.equals("Production")) {
-                                              return fillChoices("${get_resource_dir()}/${params.Env}Servers.txt")
+                                          if (Env.equals('Stage')) {
+                                              return fillChoices(\"${get_resource_dir()}/${params.Env}Servers.txt\")
+                                            } else if (Env.equals('Production')) {
+                                              return fillChoices(\"${get_resource_dir()}/${params.Env}Servers.txt\")
                                             } else {
-                                              return ["Unknown state"]
+                                              return [\"Unknown state\"]
                                             }
                                           //return ["pajamas-all", "pajamas-1", "pajamas-2", "pajamas-3", "pajamas-4", "pajamas-5"]
- //                                         return fillChoices("${get_resource_dir()}/${params.Env}Servers.txt")
+                                         // return fillChoices("${get_resource_dir()}/${params.Env}Servers.txt")
                                  //'''
                                     """
                              ]

@@ -69,7 +69,7 @@ def call(Map pipelineParams) {
                     ],
                     [$class: 'CascadeChoiceParameter',
                      choiceType: 'PT_SINGLE_SELECT',
-                     description: 'Select the Server from the Dropdown List',
+                     description: 'Select the Service from the Dropdown List',
                      filterLength: 1,
                      filterable: true,
                      name: 'Service',
@@ -91,7 +91,7 @@ def call(Map pipelineParams) {
                                      classpath: [],
                                      sandbox: true,
                                      script: """if (Env.equals('sl')){
-                                                source="${get_resource_dir()}/${params.Service}-service.txt"
+                                                source="${get_resource_dir()}/${params.Project}-service.txt"
                                                 //def f = new fillChoice()
                                                 def servers=[]
                                                 new File(source).eachLine{ line->
@@ -100,14 +100,14 @@ def call(Map pipelineParams) {
                                                 //servers=fillChoice(source)
                                                 return servers //f(source) // servers
                                                 } else if (Env.equals('pls')) {
-                                                source="${get_resource_dir()}/${params.Service}-service.txt"
+                                                source="${get_resource_dir()}/${params.Project}-service.txt"
                                                 def servers=[]
                                                 new File(source).eachLine{ line->
                                                 servers << line
                                                 }
                                                 return  servers
                                                 } else if (Env.equals('oo')) {
-                                                source="${get_resource_dir()}/${params.Service}-service.txt"
+                                                source="${get_resource_dir()}/${params.Project}-service.txt"
                                                 def servers=[]
                                                 new File(source).eachLine{ line->
                                                 servers << line

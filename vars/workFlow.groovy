@@ -27,7 +27,7 @@ def call(Map pipelineParams) {
                                      classpath: [],
                                      sandbox: true,
                                      script: '''
-                                             def type = ["Stage","Production"]
+                                             def type = [Stage,Production]
                                              return type
                                         '''
 

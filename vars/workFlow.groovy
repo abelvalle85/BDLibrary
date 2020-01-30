@@ -60,7 +60,7 @@ def call(Map pipelineParams) {
                                      script: """
                                           if (Env.equals('Stage')) {
                                               source="${get_resource_dir()}/${params.Env}Servers.txt"
-                                              def server=[]
+                                              def servers=[]
                                               servers=fillChoices(source)
                                               //assert servers instanceof List
                                               return  servers // fillChoices(\"${get_resource_dir()}/${params.Env}Servers.txt\")

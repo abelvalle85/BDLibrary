@@ -71,10 +71,7 @@ def call(Map pipelineParams) {
                                                 servers << line
                                                 }
                                                 return  servers
-                                                }
-                                                
-                                              
-                                              
+                                                }       
                                     """
                              ]
                      ]

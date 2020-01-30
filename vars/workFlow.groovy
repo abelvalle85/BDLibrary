@@ -62,7 +62,7 @@ def call(Map pipelineParams) {
                                               //def servers=[]
                                               servers=fillChoices(ENV:'{params.Env}')
                                               //assert servers instanceof List
-                                              return  servers // fillChoices(\"${get_resource_dir()}/${params.Env}Servers.txt\")
+                                              return  fillChoices(ENV:'{params.Env}') //servers // fillChoices(\"${get_resource_dir()}/${params.Env}Servers.txt\")
                                             } else if (Env.equals('Production')) {
                                               return fillChoices(\"${get_resource_dir()}/${params.Env}Servers.txt\")
                                             } else {
@@ -122,10 +122,9 @@ def call(Map pipelineParams) {
                     sh "ls -l"
                     echo "${params.Env}"
                     script{
-                        def listS = fillChoices("${params.Env}")
+                        def listS = fillChoices(ENV:'{params.Env}')
                         def listF = listS.join(",")
-                        println fillChoices("${params.Env}")
-                        println "${params.Env}"
+                        println fillChoices(ENV:'{params.Env}')
                         println listS
                         println listF
                         println listS.class

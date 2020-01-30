@@ -3,5 +3,5 @@ def call(String path){
     new File(path).eachLine{ line->
         servers << line
     }
-    return  servers
+    println servers
 }

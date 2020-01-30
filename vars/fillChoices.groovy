@@ -1,7 +1,7 @@
-def call(String path){
+List call(String path){
     def servers=[]
     new File(path).eachLine{ line->
         servers << line
     }
-    println servers
+    return servers
 }

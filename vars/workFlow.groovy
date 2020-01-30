@@ -64,7 +64,7 @@ def call(Map pipelineParams) {
                                               //assert servers instanceof List
                                               return  fillChoices(ENV:"{params.Env}") //servers // fillChoices(\"${get_resource_dir()}/${params.Env}Servers.txt\")
                                             } else if (Env.equals('Production')) {
-                                              return [\\"Unknown state\\"] //fillChoices(\"${get_resource_dir()}/${params.Env}Servers.txt\")
+                                              return [\"Unknown state\"] //fillChoices(\"${get_resource_dir()}/${params.Env}Servers.txt\")
                                             } else {
                                               return [\"Unknown state\"]
                                             }

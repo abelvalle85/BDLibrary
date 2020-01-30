@@ -3,3 +3,8 @@ tuxedo-1
 tuxedo-2
 tuxedo-3
 tuxedo-4
+tuxedo-5
+tuxedo-6
+tuxedo-7
+tuxedo-8
+tuxedo-9

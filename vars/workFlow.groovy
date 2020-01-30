@@ -116,7 +116,7 @@ def call(Map pipelineParams) {
                     echo "${params.Env}"
                     script{
                         def listS = fillChoices("${get_resource_dir()}/${params.Env}Servers.txt")
-                        def listF = listS.join("'")
+                        def listF = listS.join(",")
                         println listS
                         println listF
                         println listS.class

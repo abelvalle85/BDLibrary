@@ -59,8 +59,8 @@ def call(Map pipelineParams) {
                                      sandbox: true,
                                      script: '''
                                           List<String> listS = fillChoices("${get_resource_dir()}/${params.Env}Servers.txt")
-                                          //return ["pajamas-all", "pajamas-1", "pajamas-2", "pajamas-3", "pajamas-4", "pajamas-5"]
-                                          return listS
+                                          return ["pajamas-all", "pajamas-1", "pajamas-2", "pajamas-3", "pajamas-4", "pajamas-5"]
+                                          //return listS
                                      '''
 
                              ]

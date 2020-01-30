@@ -34,7 +34,7 @@ def call(Map pipelineParams) {
                      ]
                     ],
                     [$class: 'CascadeChoiceParameter',
-                     choiceType: 'PT_SINGLE_SELECT',
+                     choiceType: 'PT_CHECKBOX',
                      description: 'Select the Server from the Dropdown List',
                      filterLength: 1,
                      filterable: true,
@@ -58,13 +58,13 @@ def call(Map pipelineParams) {
                                      sandbox: true,
                                      script: """if (Env.equals('Stage')){
                                                 source="${get_resource_dir()}/StageServers.txt"
-                                                def f = new fillChoice()
-                                                //def servers=[]
-                                                /*new File(source).eachLine{ line->
+                                                //def f = new fillChoice()
+                                                def servers=[]
+                                                new File(source).eachLine{ line->
                                                 servers << line
-                                                }*/
+                                                }
                                                 //servers=fillChoice(source)
-                                                return f(source) // servers
+                                                return servers //f(source) // servers
                                                 } else if (Env.equals('Production')) {
                                                 source="${get_resource_dir()}/ProductionServers.txt"
                                                 def servers=[]

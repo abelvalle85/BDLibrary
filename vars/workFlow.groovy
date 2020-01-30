@@ -56,22 +56,12 @@ def call(Map pipelineParams) {
                              script: [
                                      classpath: [],
                                      sandbox: true,
-                                     script: """
-                                          if (Env.equals('Stage')) {
-                                              source="${get_resource_dir()}/${params.Env}Servers.txt"
+                                     script: """source="${get_resource_dir()}/${params.Env}Servers.txt"
                                               def servers=[]
                                               new File(source).eachLine{ line->
                                                 servers << line
                                               }
-                                              //servers=fillChoices(ENV:"{params.Env}")
-                                              //assert servers instanceof List
-                                              return  servers //fillChoices(ENV:"{params.Env}") //servers // fillChoices(\"${get_resource_dir()}/${params.Env}Servers.txt\")
-                                            } else if (Env.equals('Production')) {
-                                              return [\"Unknown state\"] //fillChoices(\"${get_resource_dir()}/${params.Env}Servers.txt\")
-                                            } else {
-                                              return [\"Unknown state\"]
-                                            }
-                                 
+                                              return  servers                                  
                                     """
                              ]
                      ]

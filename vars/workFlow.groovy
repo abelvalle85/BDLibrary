@@ -33,6 +33,41 @@ def call(Map pipelineParams) {
                              ]
                      ]
                     ],
+                    [$class: 'ChoiceParameter',
+                     choiceType: 'PT_SINGLE_SELECT',
+                     description: 'Select the Project',
+                     filterLength: 1,
+                     filterable: true,
+                     name: 'Server',
+                     randomName: 'choice-parameter-5631314456178629',
+                     referencedParameters: 'Env',
+                     script: [
+                             $class: 'GroovyScript',
+                             fallbackScript: [
+                                     classpath: [],
+                                     sandbox: true,
+                                     script: '''
+                                            return ["Error"]
+                                            '''
+                                     //'return[\'Could not get Environment from Env Param\']'
+                                     //     'return ["fillChoices(\"${get_resource_dir()}/${params.Env}Servers.txt\")"]'
+
+                             ],
+                             script: [
+                                     classpath: [],
+                                     sandbox: true,
+                                     script: """
+                                                source="${get_resource_dir()}/Projects.txt"
+                                                //def f = new fillChoice()
+                                                def servers=[]
+                                                new File(source).eachLine{ line->
+                                                servers << line
+                                                }
+                                                return servers //f(source) // servers
+                                    """
+                             ]
+                     ]
+                    ],
                     [$class: 'CascadeChoiceParameter',
                      choiceType: 'PT_CHECKBOX',
                      description: 'Select the Server from the Dropdown List',

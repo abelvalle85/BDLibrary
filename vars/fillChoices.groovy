@@ -10,7 +10,7 @@ def call(String filepath){
     lines = file.readLines()
     return lines*/
     new File(filepath).eachLine { line ->
-        parameters << "line"
+        parameters << line
     }
     return parameters
     /*parameters.each {

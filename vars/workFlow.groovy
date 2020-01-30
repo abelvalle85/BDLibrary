@@ -37,10 +37,9 @@ def call(Map pipelineParams) {
                      choiceType: 'PT_SINGLE_SELECT',
                      description: 'Select the Project',
                      filterLength: 1,
-                     filterable: true,
-                     name: 'Server',
+                     filterable: false,
+                     name: 'Project',
                      randomName: 'choice-parameter-5631314456178629',
-                     referencedParameters: 'Env',
                      script: [
                              $class: 'GroovyScript',
                              fallbackScript: [

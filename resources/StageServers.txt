@@ -1,6 +1,6 @@
-"pajamas-all"
-"pajamas-1"
-"pajamas-2"
-"pajamas-3"
-"pajamas-4"
-"pajamas-5"
+'pajamas-all'
+'pajamas-1'
+'pajamas-2'
+'pajamas-3'
+'pajamas-4'
+'pajamas-5'

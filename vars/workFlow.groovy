@@ -48,8 +48,7 @@ def call(Map pipelineParams) {
                                      sandbox: true,
                                      script: '''
                                             return ["Error"]
-                                            //return fillChoices("${get_resource_dir()}/${params.Env}Servers.txt") 
-                                        '''
+                                            '''
                                              //'return[\'Could not get Environment from Env Param\']'
                                         //     'return ["fillChoices(\"${get_resource_dir()}/${params.Env}Servers.txt\")"]'
 
@@ -59,9 +58,9 @@ def call(Map pipelineParams) {
                                      sandbox: true,
                                      script: """
                                           if (Env.equals('Stage')) {
-                                              source="${get_resource_dir()}/${params.Env}Servers.txt"
-                                              def servers=[]
-                                              servers=fillChoices(source)
+                                              //source="${get_resource_dir()}/${params.Env}Servers.txt"
+                                              //def servers=[]
+                                              servers=fillChoices(ENV:'{params.Env}')
                                               //assert servers instanceof List
                                               return  servers // fillChoices(\"${get_resource_dir()}/${params.Env}Servers.txt\")
                                             } else if (Env.equals('Production')) {
@@ -122,7 +121,7 @@ def call(Map pipelineParams) {
                     sh "pwd"
                     sh "ls -l"
                     echo "${params.Env}"
-                    script{
+                    /*script{
                         def listS = fillChoices("${get_resource_dir()}/${params.Env}Servers.txt")
                         def listF = listS.join(",")
                         println fillChoices("${get_resource_dir()}/${params.Env}Servers.txt")
@@ -132,7 +131,7 @@ def call(Map pipelineParams) {
                         println listS.class
                         println listF.class
                         //println "Here is the second line: ${listS[1]}"
-                    }
+                    }*/
                 }
             }
             stage("Build") {

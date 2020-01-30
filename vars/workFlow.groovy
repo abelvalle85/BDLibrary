@@ -47,8 +47,8 @@ def call(Map pipelineParams) {
                              fallbackScript: [
                                      classpath: [],
                                      sandbox: true,
-                                     script: '''def listS = fillChoices("${get_resource_dir()}/${params.Env}Servers.txt")
-                                            return listS
+                                     script: '''
+                                            return ["Error"]
                                         '''
                                              //'return[\'Could not get Environment from Env Param\']'
                                         //     'return ["fillChoices(\"${get_resource_dir()}/${params.Env}Servers.txt\")"]'
@@ -59,7 +59,8 @@ def call(Map pipelineParams) {
                                      sandbox: true,
                                      script: '''
                                           //def listS = fillChoices("${get_resource_dir()}/${params.Env}Servers.txt")
-                                          return ["pajamas-all", "pajamas-1", "pajamas-2", "pajamas-3", "pajamas-4", "pajamas-5"]
+                                          //return ["pajamas-all", "pajamas-1", "pajamas-2", "pajamas-3", "pajamas-4", "pajamas-5"]
+                                          return [listS.join(",")]
                                      '''
 
                              ]

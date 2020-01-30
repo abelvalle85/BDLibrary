@@ -4,7 +4,7 @@ def call(String filepath){
         def lines = file.readLines()
         return lines
     }*/
-    //def parameters = []
+    def parameters = []
     /*List<String> lines = []
     File file = new File(filepath)
     lines = file.readLines()

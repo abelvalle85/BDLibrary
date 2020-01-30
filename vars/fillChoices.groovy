@@ -5,14 +5,14 @@ def call(String filepath){
         return lines
     }*/
     //def parameters = []
-    List<String> lines = []
+    /*List<String> lines = []
     File file = new File(filepath)
     lines = file.readLines()
-    return lines
-    /*new File(filepath).eachLine { line ->
-        parameters << line
-    }*/
-    //return parameters
+    return lines*/
+    new File(filepath).eachLine { line ->
+        parameters << "line"
+    }
+    return parameters
     /*parameters.each {
         println it
     }*/

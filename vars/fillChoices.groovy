@@ -9,7 +9,7 @@ def call(String filepath){
     //def ProductionServers = ['tuxedo-all','tuxedo-1','tuxedo-2','tuxedo-3','tuxedo-4']
     File file = new File(filepath)
     lines = file.readLines()
-    println lines
+    return lines
     /*new File(filepath).eachLine { line ->
         parameters << line
     }

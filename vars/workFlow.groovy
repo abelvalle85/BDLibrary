@@ -121,7 +121,7 @@ def call(Map pipelineParams) {
                     sh "pwd"
                     sh "ls -l"
                     echo "${params.Env}"
-                    script{
+                    //script{
                        // def listS = fillChoices(ENV:"{params.Env}")
                         //def listF = listS.join(",")
                        // println fillChoices(ENV:"{params.Env}")
@@ -130,7 +130,7 @@ def call(Map pipelineParams) {
                         //println listS.class
                         //println listF.class
                         //println "Here is the second line: ${listS[1]}"
-                    }
+                    //}
                 }
             }
             stage("Build") {

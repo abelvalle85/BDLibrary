@@ -1,0 +1,8 @@
+oo-inventory
+oo-dashboard
+oo-artwork
+oo-router
+oo-email
+oo-dtg
+oo-print
+oo-manager

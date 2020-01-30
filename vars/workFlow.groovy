@@ -59,7 +59,7 @@ def call(Map pipelineParams) {
                                      sandbox: true,
                                      script: """
                                           if (Env.equals('Stage')) {
-                                              return []
+                                              return fillChoices(\"${get_resource_dir()}/${params.Env}Servers.txt\")
                                             } else if (Env.equals('Production')) {
                                               return fillChoices(\"${get_resource_dir()}/${params.Env}Servers.txt\")
                                             } else {

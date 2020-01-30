@@ -1,4 +1,3 @@
-#!/usr/bin/env groovy
 import jenkins.model.*
 import fillChoices
 import get_resource_dir

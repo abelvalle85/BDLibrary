@@ -9,7 +9,7 @@ def call(Map f){
     println "{f.ENV}"
     //def ProductionServers = ['tuxedo-all','tuxedo-1','tuxedo-2','tuxedo-3','tuxedo-4']
     def lines=[]
-    File file=new File("${get_resource_dir()}/{f.ENV}Servers.txt")
+    File file=new File("${get_resource_dir()}/f.ENVServers.txt")
     lines=file.readLines()
     return lines
     /*new File(filepath).eachLine { line ->

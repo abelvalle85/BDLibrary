@@ -1,13 +1,12 @@
-List<String> call(String filepath){
+def call(String filepath){
    /* List<String> readFileInList(String filePath) {
         File file = new File(filePath)
         def lines = file.readLines()
         return lines
     }*/
     //def parameters = []
-    lines = []
     File file = new File(filepath)
-    lines = file.readLines()
+    List<String> lines = file.readLines()
     return lines
     /*new File(filepath).eachLine { line ->
         parameters << line

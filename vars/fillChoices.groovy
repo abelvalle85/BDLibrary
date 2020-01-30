@@ -4,15 +4,15 @@ def call(String filepath){
         def lines = file.readLines()
         return lines
     }*/
-    def parameters = []
-    /*List<String> lines = []
+    //def parameters = []
+    List<String> lines = []
     File file = new File(filepath)
     lines = file.readLines()
-    return lines*/
-    new File(filepath).eachLine { line ->
+    return lines
+    /*new File(filepath).eachLine { line ->
         parameters << line
     }
-    return parameters
+    return parameters*/
     /*parameters.each {
         println it
     }*/

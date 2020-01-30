@@ -56,14 +56,14 @@ def call(Map pipelineParams) {
                              script: [
                                      classpath: [],
                                      sandbox: true,
-                                     script: """
-                                              source="${get_resource_dir()}/${params.Env}Servers.txt"
+                                     script: '''
+                                                  source="${get_resource_dir()}/${params.Env}Servers.txt"
                                               def servers=[]
                                               new File(source).eachLine{ line->
                                                 servers << line
                                               }
-                                              return  servers                                  
-                                    """
+                                              return  servers
+                                    '''
                              ]
                      ]
                     ]

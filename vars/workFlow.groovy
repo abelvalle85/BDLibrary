@@ -58,12 +58,13 @@ def call(Map pipelineParams) {
                                      sandbox: true,
                                      script: """if (Env.equals('Stage')){
                                                 source="${get_resource_dir()}/StageServers.txt"
+                                                def f = new fillChoice()
                                                 //def servers=[]
                                                 /*new File(source).eachLine{ line->
                                                 servers << line
                                                 }*/
                                                 //servers=fillChoice(source)
-                                                return fillChoice(source) // servers
+                                                return f(source) // servers
                                                 } else if (Env.equals('Production')) {
                                                 source="${get_resource_dir()}/ProductionServers.txt"
                                                 def servers=[]

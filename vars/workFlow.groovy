@@ -68,6 +68,57 @@ def call(Map pipelineParams) {
                      ]
                     ],
                     [$class: 'CascadeChoiceParameter',
+                     choiceType: 'PT_SINGLE_SELECT',
+                     description: 'Select the Server from the Dropdown List',
+                     filterLength: 1,
+                     filterable: true,
+                     name: 'Service',
+                     randomName: 'choice-parameter-5631314456138619',
+                     referencedParameters: 'Service',
+                     script: [
+                             $class: 'GroovyScript',
+                             fallbackScript: [
+                                     classpath: [],
+                                     sandbox: true,
+                                     script: '''
+                                            return ["Error"]
+                                            '''
+                                     //'return[\'Could not get Environment from Env Param\']'
+                                     //     'return ["fillChoices(\"${get_resource_dir()}/${params.Env}Servers.txt\")"]'
+
+                             ],
+                             script: [
+                                     classpath: [],
+                                     sandbox: true,
+                                     script: """if (Env.equals('sl')){
+                                                source="${get_resource_dir()}/${params.Service}-service.txt"
+                                                //def f = new fillChoice()
+                                                def servers=[]
+                                                new File(source).eachLine{ line->
+                                                servers << line
+                                                }
+                                                //servers=fillChoice(source)
+                                                return servers //f(source) // servers
+                                                } else if (Env.equals('pls')) {
+                                                source="${get_resource_dir()}/${params.Service}-service.txt"
+                                                def servers=[]
+                                                new File(source).eachLine{ line->
+                                                servers << line
+                                                }
+                                                return  servers
+                                                } else if (Env.equals('oo')) {
+                                                source="${get_resource_dir()}/${params.Service}-service.txt"
+                                                def servers=[]
+                                                new File(source).eachLine{ line->
+                                                servers << line
+                                                }
+                                                return  servers
+                                                }       
+                                    """
+                             ]
+                     ]
+                    ],
+                    [$class: 'CascadeChoiceParameter',
                      choiceType: 'PT_CHECKBOX',
                      description: 'Select the Server from the Dropdown List',
                      filterLength: 1,

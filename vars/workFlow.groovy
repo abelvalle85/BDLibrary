@@ -49,7 +49,7 @@ def call(Map pipelineParams) {
                                      sandbox: true,
                                      script: '''
                                             //return ["Error"]
-                                            return fillChoices("${get_resource_dir()}/${params.Env}Servers.txt")
+                                            return fillChoices("${get_resource_dir()}/${params.Env}Servers.txt") as String[]
                                         '''
                                              //'return[\'Could not get Environment from Env Param\']'
                                         //     'return ["fillChoices(\"${get_resource_dir()}/${params.Env}Servers.txt\")"]'
@@ -61,7 +61,7 @@ def call(Map pipelineParams) {
                                      script: '''
                                           
                                           //return ["pajamas-all", "pajamas-1", "pajamas-2", "pajamas-3", "pajamas-4", "pajamas-5"]
-                                          return fillChoices("${get_resource_dir()}/${params.Env}Servers.txt")
+                                          return fillChoices("${get_resource_dir()}/${params.Env}Servers.txt") as String[]
                                  '''
 
                              ]

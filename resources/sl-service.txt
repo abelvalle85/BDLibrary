@@ -1,0 +1,5 @@
+sl-manager
+sl-seller-manager
+sl-rest
+sl-data
+sl-rewards

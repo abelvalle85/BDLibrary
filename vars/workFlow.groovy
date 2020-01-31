@@ -25,11 +25,8 @@ def call(Map pipelineParams) {
                              script: [
                                      classpath: [],
                                      sandbox: true,
-                                     script: '''
-                                             def type = ["Stage", "Production"]
-                                             return type
-                                        '''
-
+                                     script: '''def type = ["Stage", "Production"]
+                                             return type'''
                              ]
                      ]
                     ],
@@ -48,22 +45,16 @@ def call(Map pipelineParams) {
                                      script: '''
                                             return ["Error"]
                                             '''
-                                     //'return[\'Could not get Environment from Env Param\']'
-                                     //     'return ["fillChoices(\"${get_resource_dir()}/${params.Env}Servers.txt\")"]'
-
                              ],
                              script: [
                                      classpath: [],
                                      sandbox: true,
-                                     script: """
-                                                source="${get_resource_dir()}/Projects.txt"
-                                                //def f = new fillChoice()
+                                     script: """source="${get_resource_dir()}/Projects.txt"
                                                 def servers=[]
                                                 new File(source).eachLine{ line->
                                                 servers << line
                                                 }
-                                                return servers //f(source) // servers
-                                    """
+                                                return servers"""
                              ]
                      ]
                     ],
@@ -80,12 +71,7 @@ def call(Map pipelineParams) {
                              fallbackScript: [
                                      classpath: [],
                                      sandbox: true,
-                                     script: '''
-                                            return ["Error"]
-                                            '''
-                                     //'return[\'Could not get Environment from Env Param\']'
-                                     //     'return ["fillChoices(\"${get_resource_dir()}/${params.Env}Servers.txt\")"]'
-
+                                     script: '''return ["Error"]'''
                              ],
                              script: [
                                      classpath: [],
@@ -159,7 +145,27 @@ def call(Map pipelineParams) {
                                     """
                              ]
                      ]
-                    ]
+                    ],
+                    [$class: 'DynamicReferenceParameter',
+                     choiceType: 'ET_UNORDERED_LIST',
+                     description: '',
+                     name: 'Show_info',
+                     omitValueField: false,
+                     randomName: 'choice-parameter-1440364011873359',
+                     referencedParameters: '',
+                     script: [
+                              $class: 'GroovyScript',
+                              fallbackScript: [
+                                      classpath: [],
+                                      sandbox: true,
+                                      script: ''
+                              ],
+                              script: [
+                                      classpath: [],
+                                      sandbox: true,
+                                      script: """return ['Environment','Project','Service']"""
+                              ]
+                     ]
             ])
     ])
 

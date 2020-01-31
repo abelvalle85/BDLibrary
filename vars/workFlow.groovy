@@ -210,6 +210,7 @@ def call(Map pipelineParams) {
                     sh "pwd"
                     sh "ls -l"
                     echo "${params.Env}"
+                    echo "${params.Project}"
                    /* script{
                         def listS = fillChoices(ENV:"${params.Env}")
                         //def listF = listS.join(",")

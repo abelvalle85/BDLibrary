@@ -92,13 +92,11 @@ def call(Map pipelineParams) {
                                      sandbox: true,
                                      script: """if (Project.equals('sl')){
                                                 source="${get_resource_dir()}/${params.Project}-service.txt"
-                                                //def f = new fillChoice()
                                                 def servers=[]
                                                 new File(source).eachLine{ line->
                                                 servers << line
                                                 }
-                                                //servers=fillChoice(source)
-                                                return servers //f(source) // servers
+                                                return servers 
                                                 } else if (Project.equals('pls')) {
                                                 source="${get_resource_dir()}/${params.Project}-service.txt"
                                                 def servers=[]

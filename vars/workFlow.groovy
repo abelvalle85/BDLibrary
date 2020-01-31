@@ -166,6 +166,7 @@ def call(Map pipelineParams) {
                                       script: """return ['Environment','Project','Service']"""
                               ]
                      ]
+                    ]
             ])
     ])
 

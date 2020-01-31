@@ -91,21 +91,21 @@ def call(Map pipelineParams) {
                                      classpath: [],
                                      sandbox: true,
                                      script: """if (Project.equals('sl')){
-                                                source="${get_resource_dir()}/${params.Project}-service.txt"
+                                                source="${get_resource_dir()}/sl-service.txt"
                                                 def servers=[]
                                                 new File(source).eachLine{ line->
                                                 servers << line
                                                 }
                                                 return servers 
                                                 } else if (Project.equals('pls')) {
-                                                source="${get_resource_dir()}/${params.Project}-service.txt"
+                                                source="${get_resource_dir()}/pls-service.txt"
                                                 def servers=[]
                                                 new File(source).eachLine{ line->
                                                 servers << line
                                                 }
                                                 return  servers
                                                 } else if (Project.equals('oo')) {
-                                                source="${get_resource_dir()}/${params.Project}-service.txt"
+                                                source="${get_resource_dir()}/oo-service.txt"
                                                 def servers=[]
                                                 new File(source).eachLine{ line->
                                                 servers << line

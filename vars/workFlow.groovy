@@ -90,8 +90,8 @@ def call(Map pipelineParams) {
                              script: [
                                      classpath: [],
                                      sandbox: true,
-                                     script: """if (Env.equals('sl')){
-                                                source="${get_resource_dir()}/sl-service.txt"
+                                     script: """if (Project.equals('sl')){
+                                                source="${get_resource_dir()}/${params.Project}-service.txt"
                                                 //def f = new fillChoice()
                                                 def servers=[]
                                                 new File(source).eachLine{ line->
@@ -99,15 +99,15 @@ def call(Map pipelineParams) {
                                                 }
                                                 //servers=fillChoice(source)
                                                 return servers //f(source) // servers
-                                                } else if (Env.equals('pls')) {
-                                                source="${get_resource_dir()}/pls-service.txt"
+                                                } else if (Project.equals('pls')) {
+                                                source="${get_resource_dir()}/${params.Project}-service.txt"
                                                 def servers=[]
                                                 new File(source).eachLine{ line->
                                                 servers << line
                                                 }
                                                 return  servers
-                                                } else if (Env.equals('oo')) {
-                                                source="${get_resource_dir()}/oo-service.txt"
+                                                } else if (Project.equals('oo')) {
+                                                source="${get_resource_dir()}/${params.Project}-service.txt"
                                                 def servers=[]
                                                 new File(source).eachLine{ line->
                                                 servers << line

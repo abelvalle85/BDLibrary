@@ -163,7 +163,7 @@ def call(Map pipelineParams) {
                               script: [
                                       classpath: [],
                                       sandbox: true,
-                                      script: """return ["Environment : ${params.Env} ","Project : ${params.Project}","Service : ${params.Service}","Servers : ${params.Servers}"]"""
+                                      script: """return ["Environment : ${Env} ","Project : ${Project}","Service : ${Service}","Servers : ${Servers}"]"""
                               ]
                      ]
                     ]

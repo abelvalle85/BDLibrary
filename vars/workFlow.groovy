@@ -152,7 +152,7 @@ def call(Map pipelineParams) {
                      name: 'Show_info',
                      omitValueField: false,
                      randomName: 'choice-parameter-1440364011873359',
-                     referencedParameters: '',
+                     referencedParameters: 'Env, Project',
                      script: [
                               $class: 'GroovyScript',
                               fallbackScript: [
